@@ -11,7 +11,7 @@ class Patient:
         self.disease = disease
 # method that will help to show how the class will look lik if it is printed
     def __repr__(self):
-        return f"<Doctor {self.first_name}, {self.second_name}, {self.disease}>"
+        return f"<Patient {self.first_name}, {self.second_name}, {self.disease}>"
 # a class method to create a table for patients 
     @classmethod
     def create_table(cls):

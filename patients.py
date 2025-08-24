@@ -1,4 +1,5 @@
 from db import CURSOR, CONN
+
 # after importing CURSOR AND CONN
 # create a class called patient which will later be the table
 
@@ -16,11 +17,11 @@ class Patient:
     @classmethod
     def create_table(cls):
         sql="""
-        CREATE TABLE IF NOT EXISTING patients(
+        CREATE TABLE IF NOT EXISTS patients(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         first_name TEXT NOT NULL,
         second_name TEXT NOT NULL,
-        disease TEXT NOT NULL;
+        disease TEXT NOT NULL
 
         );
         """
@@ -45,5 +46,9 @@ class Patient:
             ).fetchone()
             if row:
                 self.id = row[0]
+
+
+Patient.create_table()
+print("Patients table created ✅")
     
            

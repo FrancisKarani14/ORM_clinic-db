@@ -20,7 +20,7 @@ class Doctor:
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         first_name TEXT NOT NULL,
         second_name TEXT NOT NULL,
-        specialization_name TEXT NOT NULL,
+        specialization_name TEXT NOT NULL
 
         );
         """
@@ -44,3 +44,7 @@ class Doctor:
                   "SELECT id FROM doctors WHERE first_name = ? AND second_name = ?",
                    (self.first_name, self.second_name)
                 ).fetchone()
+
+
+Doctor.create_table()
+print("Doctors table table created ✅")
